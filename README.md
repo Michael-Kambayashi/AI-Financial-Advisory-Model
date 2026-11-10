@@ -1,10 +1,18 @@
-# AI-Based Financial Advisory Model for Digital Investments
+# AI-Based Financial Advisory Model for Digital Micro-Investments
 
 **Academic research prototype focused on middle-income Filipino investors.**
 
 This repository contains the **Google Colab implementation** of an AI-assisted financial advisory framework. The prototype processes survey responses and historical Philippine Stock Exchange Index (PSEi) data, derives financial-capacity and behavioral-risk profiles, generates a market forecast, and combines these inputs through an explicit rule-based investment feasibility assessment.
 
 > **Research and educational use only.** This is an experimental decision-support prototype, **not a deployed financial advisory service** or a validated source of personal investment advice. Forecasts and recommendation templates should not be used for real financial decisions.
+
+## Research team
+
+**Thesis title:** *An AI-Based Financial Advisory Model Framework for Digital Micro-Investments among Mid-Income Filipinos*  
+**Researchers:** Julienne Dana T. Felipe, Michael Mario P. Kambayashi, and Dylan Hope A. Salazar  
+**Institution:** Mapúa University — Makati, Bachelor of Science in Computer Science
+
+This repository showcases the computational prototype from a collaborative university thesis. The full manuscript is **not distributed in this repository yet** pending coauthor approval, public-release review of respondent quotations, and confirmation of any university requirements.
 
 ## Project at a glance
 
@@ -41,6 +49,20 @@ The modules perform different tasks:
 4. **Market signals (Prophet).** Fits a time-series forecast to manually supplied historical PSEi closing index data, calculates a **30-business-day** forecast, and categorizes the result as *Positive*, *Neutral*, *Negative*, or *Volatile* (the last label reflects forecast uncertainty in this code).
 5. **Rule-based assessment.** Integrates **3 financial capacity × 3 behavioral risk × 4 market signal** categories into a **36-combination rule table**, followed by explanatory recommendation templates.
 6. **Evaluation and exports.** Implements FCM Fuzzy Partition Coefficient and silhouette scoring; Prophet cross-validation metrics; researcher-consensus comparisons for behavioral classifications; and a qualitative recommendation-review workflow. Saves output tables and figures locally when executed.
+
+## Results reported in the thesis manuscript
+
+The figures below are **reported results from the group research manuscript**, not independently reproduced by running the public notebook. The original datasets and completed review sheets are not included in this repository.
+
+| Component | Reported result | Important qualification |
+| --- | --- | --- |
+| Survey screening | 91 original responses; 82 passed self-reported income screening; 69 passed validated income screening; 68 respondents were used in the integrated analysis | Small purposive sample; not representative of all mid-income Filipinos |
+| Fuzzy C-Means | Fuzzy Partition Coefficient **0.7575**; Silhouette Score **0.2935** | Cluster memberships were relatively concentrated, but dominant clusters had considerable geometric overlap |
+| XLM-RoBERTa | **84% accuracy** (21 of 25 profiles agreeing with researcher-consensus labels); weighted F1-score **0.8362** | Small researcher-labeled validation sample, including only 2 high-risk profiles |
+| Prophet | MAE **331.65**, RMSE **366.14** PSEi index points; MAPE **5.16%** | Cross-validation used a 30-calendar-day horizon, unlike the 30-business-day projected forecast; no baseline model was evaluated |
+| Integrated decision rules | All 36 behavior × capacity × market combinations defined; 8 combinations observed in the final prototype run | Reported assessments are heuristic decision-support outputs, not evidence of profitable investments |
+
+The manuscript also reports a limited qualitative review of two example recommendations by 15 participants. These are prototype validation findings, **not evidence of investment safety, profitability, or production readiness**.
 
 ## Repository structure
 
@@ -83,10 +105,12 @@ Installing the requirements locally is **not sufficient** to run the notebook as
 ## Data and research ethics
 
 - **No respondent-level financial or behavioral survey data is included.** Keep participants' financial details, written answers, and identifiers private unless the research consent and institutional rules explicitly permit release.
-- The supplied Python source does **not** contain the underlying original research CSVs or the observed final metrics. This README deliberately does **not** invent accuracy figures, return forecasts, or a number of respondents.
+- The supplied Python source does **not** include the original research CSVs or recorded final run outputs. The **Results reported in the thesis manuscript** section cites figures from the provided research paper; those figures were not independently recomputed from the published code.
 - `output_results/`, downloaded exports, and local datasets are excluded by `.gitignore`; check all files manually before every public commit.
 - The script contains configuration choices and heuristic rules specific to this academic prototype. The resulting categories and recommendation templates are not a substitute for professional suitability assessments.
-- If you publish the full paper later, add the properly attributed author list and any required institutional acknowledgments. Coauthors should be consulted before publicly posting shared or unpublished manuscripts.
+- The paper identifies participants using respondent labels, but some results include **verbatim responses linked to respondent numbers**. Pseudonyms alone do not guarantee anonymity; review those quotes and the original research-consent terms before releasing the manuscript.
+- The coauthors are credited above. Confirm their consent and any university publication requirements before publicly distributing the jointly authored thesis PDF.
+- Before publishing the revised manuscript, remove or audit external notebook links and verify that no saved cell outputs expose private respondent data or unintended access to research materials.
 
 ## Limitations
 
@@ -107,4 +131,3 @@ Installing the requirements locally is **not sufficient** to run the notebook as
 
 **Project type:** University academic research and prototype development.  
 **Status:** Source and notebook demonstration; not a financial product.  
-**Code license:** Not specified. Please review authorship and university project rights before choosing one.
