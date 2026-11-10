@@ -10,7 +10,7 @@ This repository contains the **Google Colab implementation** of an AI-assisted f
 
 **Thesis title:** *An AI-Based Financial Advisory Model Framework for Digital Micro-Investments among Mid-Income Filipinos*  
 **Researchers:** Julienne Dana T. Felipe, Michael Mario P. Kambayashi, and Dylan Hope A. Salazar  
-**Research Paper:** [An AI-Based Financial Advisory Model Framework](https://michael-kambayashi.github.io/papers/financial-advisory.pdf))  
+**Research Paper:** [An AI-Based Financial Advisory Model Framework](https://michael-kambayashi.github.io/papers/financial-advisory.pdf)  
 **Institution:** Mapúa University — Makati, Bachelor of Science in Computer Science
 
 This repository showcases the computational prototype from a collaborative university thesis. The full manuscript is **not distributed in this repository yet** pending coauthor approval, public-release review of respondent quotations, and confirmation of any university requirements.
